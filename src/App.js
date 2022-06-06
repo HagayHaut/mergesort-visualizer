@@ -5,17 +5,20 @@ import Controls from './components/Controls';
 import './App.css';
 
 const NUMBER_OF_ARRAY_BARS = 200;
-const PRIMARY_COLOR = 'turquoise';
+const PRIMARY_COLOR = 'cadetblue';
 const SECONDARY_COLOR = 'red';
 
 function App() {
 
   const [sortArray, setSortArray] = useState([]);
-  const [speed, setSpeed] = useState(5)
+  const [speed, setSpeed] = useState(5);
+ 
 
   useEffect(() => { 
     resetSortArray();
   }, [])
+
+
 
   const randomFromRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -29,6 +32,7 @@ function App() {
 
   function mergeSort() {
     const animations = getMergeSortAnimations(sortArray);
+    console.log(animations);
     for (let i = 0; i < animations.length; i++) {
       const arrayBars = document.getElementsByClassName('bar');
       const isColorChange = i % 3 !== 2;

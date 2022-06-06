@@ -12,6 +12,7 @@ function Controls({
             <button onClick={onRandomizeClick}>Randomize</button>
             <label> &nbsp; Speed: &nbsp; </label>
             <select value={speed} onChange={onSpeedChange}>
+              <option value='0.1'>0.1ms</option>
               <option value='1'>1ms</option>
               <option value='2'>2ms</option>
               <option value='5'>5ms</option>
