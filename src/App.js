@@ -4,7 +4,6 @@ import Graph from './components/Graph';
 import Controls from './components/Controls';
 import './App.css';
 
-const ANIMATION_SPEED_MS = 1;
 const NUMBER_OF_ARRAY_BARS = 200;
 const PRIMARY_COLOR = 'turquoise';
 const SECONDARY_COLOR = 'red';
@@ -12,6 +11,7 @@ const SECONDARY_COLOR = 'red';
 function App() {
 
   const [sortArray, setSortArray] = useState([]);
+  const [speed, setSpeed] = useState(5)
 
   useEffect(() => { 
     resetSortArray();
@@ -40,13 +40,13 @@ function App() {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        }, i * ANIMATION_SPEED_MS);
+        }, i * speed);
       } else {
         setTimeout(() => {
           const [barOneIdx, newHeight] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${Math.floor(newHeight/2.5)}px`;
-        }, i * ANIMATION_SPEED_MS);
+        }, i * speed);
       }
     }
   }
@@ -57,6 +57,8 @@ function App() {
       <Controls 
         onRandomizeClick={() => resetSortArray()}
         onMergeSortClick={() => mergeSort()}
+        onSpeedChange={(e) => setSpeed(e.target.value)}
+        speed={speed}
       />
     </div>
   );
