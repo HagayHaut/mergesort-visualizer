@@ -11,7 +11,7 @@ function App() {
 
   const [sortArray, setSortArray] = useState([]);
   const [speed, setSpeed] = useState(5);
-  const [arraySize, setArraySize] = useState(200)
+  const [arraySize, setArraySize] = useState(230)
  
 
   useEffect(() => { 
@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='container'>
+      <div className='content'>
         <Graph sortArray={sortArray}/>
         <Controls 
           onRandomizeClick={() => resetSortArray()}
