@@ -4,7 +4,6 @@ import Graph from './components/Graph';
 import Controls from './components/Controls';
 import './App.css';
 
-const NUMBER_OF_ARRAY_BARS = 200;
 const PRIMARY_COLOR = 'cadetblue';
 const SECONDARY_COLOR = 'red';
 
@@ -12,11 +11,12 @@ function App() {
 
   const [sortArray, setSortArray] = useState([]);
   const [speed, setSpeed] = useState(5);
+  const [arraySize, setArraySize] = useState(200)
  
 
   useEffect(() => { 
     resetSortArray();
-  }, [])
+  }, [arraySize])
 
 
 
@@ -24,7 +24,7 @@ function App() {
 
   function resetSortArray() {
     const newArray = [];
-    for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
+    for (let i = 0; i < arraySize; i++) {
       newArray.push(randomFromRange(7, 1000));
     }
     setSortArray(newArray);
@@ -57,13 +57,18 @@ function App() {
 
   return (
     <div className="App">
-      <Graph sortArray={sortArray}/>
-      <Controls 
-        onRandomizeClick={() => resetSortArray()}
-        onMergeSortClick={() => mergeSort()}
-        onSpeedChange={(e) => setSpeed(e.target.value)}
-        speed={speed}
-      />
+      <div className='container'>
+        <Graph sortArray={sortArray}/>
+        <Controls 
+          onRandomizeClick={() => resetSortArray()}
+          onMergeSortClick={() => mergeSort()}
+          onSpeedChange={(e) => setSpeed(e.target.value)}
+          onSizeChange={(e) => setArraySize(e.target.value)}
+          speed={speed}
+          arraySize={arraySize}
+        />
+      </div>
+      
     </div>
   );
 }

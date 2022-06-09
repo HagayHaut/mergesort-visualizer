@@ -1,4 +1,13 @@
+.body {
+  text-align: center;
+}
 
+.container {
+  border: 1px solid black;
+  position: absolute;
+  min-height: 500px;
+  width: 700px;
+}
 
 .graph {
   position: relative;

@@ -4,12 +4,16 @@ function Controls({
     onRandomizeClick, 
     onMergeSortClick, 
     onSpeedChange,
-    speed 
+    onSizeChange,
+    speed,
+    arraySize
   }) {
     return (
       <div className="controls">
           <span className="panel">
-            <button onClick={onRandomizeClick}>Randomize</button>
+            <button onClick={onRandomizeClick}>New Array</button>
+            <label> &nbsp; Size: &nbsp; </label>
+            <input type='number' value={arraySize} onChange={onSizeChange} min='50' max='300'></input>
             <label> &nbsp; Speed: &nbsp; </label>
             <select value={speed} onChange={onSpeedChange}>
               <option value='0.1'>0.1ms</option>
