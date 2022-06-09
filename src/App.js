@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import {getMergeSortAnimations} from './sorting/merge';
 import Graph from './components/Graph';
 import Controls from './components/Controls';
+import Header from './components/Header';
 import './App.css';
 
 const PRIMARY_COLOR = 'cadetblue';
@@ -10,8 +11,8 @@ const SECONDARY_COLOR = 'red';
 function App() {
 
   const [sortArray, setSortArray] = useState([]);
-  const [speed, setSpeed] = useState(5);
-  const [arraySize, setArraySize] = useState(230)
+  const [speed, setSpeed] = useState(2);
+  const [arraySize, setArraySize] = useState(200)
  
 
   useEffect(() => { 
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <div className='content'>
         <Graph sortArray={sortArray}/>
         <Controls 
