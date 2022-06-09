@@ -6,7 +6,9 @@
   border: 1px solid black;
   position: absolute;
   min-height: 500px;
-  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .graph {
