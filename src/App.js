@@ -3,10 +3,12 @@ import {getMergeSortAnimations} from './sorting/merge';
 import Graph from './components/Graph';
 import Controls from './components/Controls';
 import Header from './components/Header';
+import { BsGithub } from 'react-icons/bs'
 import './App.css';
 
 const PRIMARY_COLOR = 'cadetblue';
 const SECONDARY_COLOR = 'red';
+const GITHUB_LINK = 'https://github.com/HagayHaut/sorting-visualizer'
 
 function App() {
 
@@ -58,6 +60,9 @@ function App() {
 
   return (
     <div className="App">
+      <a href={GITHUB_LINK} target="_blank">
+        <BsGithub className='github'/>
+      </a>
       <Header />
       <div className='content'>
         <Graph sortArray={sortArray}/>

@@ -9,8 +9,15 @@ button {
   cursor: pointer;
 }
 
+.github {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 30px;
+}
+
 h1 {
-  background-color: rgb(50, 50, 50);
+  background-color: black;
   border-radius: 20px;
   margin-left: 270px;
   margin-right: 270px;
