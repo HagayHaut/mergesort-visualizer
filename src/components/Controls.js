@@ -15,7 +15,7 @@ function Controls({
           <span className="panel">
             <button onClick={onRandomizeClick}>New Array</button>
             <div className="delay-select">
-              <label> &nbsp; Delay: </label>
+              <label style={{color: 'white'}}> &nbsp; Delay: </label>
               <select value={speed} onChange={onSpeedChange}>
                 <option value='0.1'>0.1ms</option>
                 <option value='1'>1ms</option>

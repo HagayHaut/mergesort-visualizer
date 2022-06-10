@@ -1,11 +1,12 @@
 body {
-  background-color: beige;
+  background-image: url(https://media.istockphoto.com/photos/hexagonal-honeycomb-abstract-3d-background-picture-id905438692?b=1&k=20&m=905438692&s=170667a&w=0&h=pTjmS2z305vjoU2j-yWgUwEK_mdK-F8IH5yGtVsbDAY=);
   font-family: 'Inter', sans-serif;
 }
 
 button {
   font-family: 'Inter', sans-serif;
   margin-top: 3px;
+  cursor: pointer;
 }
 
 h1 {
@@ -37,7 +38,7 @@ h1 {
 }
 
 .controls {
-  background-color: salmon;
+  background-color: black;
   border-top: 2px solid black;
   border-radius: 0 0 10px 10px;
   height: 30px;
