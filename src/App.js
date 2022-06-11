@@ -35,7 +35,6 @@ function App() {
 
   function mergeSort() {
     const animations = getMergeSortAnimations(sortArray);
-    console.log(animations);
     for (let i = 0; i < animations.length; i++) {
       const arrayBars = document.getElementsByClassName('bar');
       const isColorChange = i % 3 !== 2;
