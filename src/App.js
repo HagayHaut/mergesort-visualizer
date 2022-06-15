@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {getMergeSortAnimations} from './sorting/merge';
+import {mergeSortAnimations} from './sorting/animate';
 import Graph from './components/Graph';
 import Controls from './components/Controls';
 import Header from './components/Header';
@@ -9,17 +9,18 @@ import './App.css';
 const PRIMARY_COLOR = 'cadetblue';
 const SECONDARY_COLOR = 'red';
 const GITHUB_LINK = 'https://github.com/HagayHaut/sorting-visualizer'
+const ARRAY_SIZE = 200;
 
 function App() {
 
   const [sortArray, setSortArray] = useState([]);
   const [speed, setSpeed] = useState(2);
-  const [arraySize, setArraySize] = useState(200)
+  // const [arraySize, setArraySize] = useState(200)
  
 
   useEffect(() => { 
     resetSortArray();
-  }, [arraySize])
+  }, [])
 
 
 
@@ -27,14 +28,14 @@ function App() {
 
   function resetSortArray() {
     const newArray = [];
-    for (let i = 0; i < arraySize; i++) {
+    for (let i = 0; i < ARRAY_SIZE; i++) {
       newArray.push(randomFromRange(7, 1000));
     }
     setSortArray(newArray);
   }
 
   function mergeSort() {
-    const animations = getMergeSortAnimations(sortArray);
+    const animations = mergeSortAnimations(sortArray);
     for (let i = 0; i < animations.length; i++) {
       const arrayBars = document.getElementsByClassName('bar');
       const isColorChange = i % 3 !== 2;
@@ -69,9 +70,9 @@ function App() {
           onRandomizeClick={() => resetSortArray()}
           onMergeSortClick={() => mergeSort()}
           onSpeedChange={(e) => setSpeed(e.target.value)}
-          onSizeChange={(e) => setArraySize(e.target.value)}
+          // onSizeChange={(e) => setArraySize(e.target.value)}
           speed={speed}
-          arraySize={arraySize}
+          // arraySize={arraySize}
         />
       </div>
       
